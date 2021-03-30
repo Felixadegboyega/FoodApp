@@ -1,4 +1,4 @@
-# thirdproject
+# FOOD APP
 
 ## Project setup
 ```
