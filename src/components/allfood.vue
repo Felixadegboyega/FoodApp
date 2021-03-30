@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container-fluid pt-5">
-      <h6 class="ml-4 mt-4">All Foods</h6>
+      <h6 class="ml-4 mt-4 title">All Foods</h6>
       <div class="row justify-content-center">
         <div class="rounded shadow-sm border p-0 m-4 col-12 foodCards" v-bind:key="i" v-for="(std, i) in allFoodInfo">
           <div class="small w-100 added mx-auto text-center alert-success" style="display:none">Added to Cart</div>
@@ -9,7 +9,7 @@
             <img class="rounded-top" :src="require(`./img/${std.picture}`)" alt="">
             <div class="ml-1 mr-1 card-body p-0">
                <span style="font-size:0.6rem !important" class="float-right ml-auto rounded-bottom small p-1 badge-info">{{std.status}}</span>
-              <div class="ml-3"><b>{{std.name}}</b></div>
+              <div class="ml-3 foodName"><b>{{std.name}}</b></div>
               <div class="small ml-3">Available From {{std.timeFrom}}:00 to {{std.timeTo}}:00 </div>
               <div class="small ml-3">Price per Plate: {{std.pricePPlate}}</div>
               <input type="number" class="form-control pr-0 ml-3 position-absolute qty" v-model="std.qty" style="width:40px">
@@ -142,7 +142,10 @@ export default {
 }
 .addBut{
   bottom: 8px;
-  right:5px
+  right:5px;
+  background-color: #A07654;
+  border:none;
+  box-shadow: none !important;
 }
 .qty{
   bottom:8px;
@@ -151,5 +154,8 @@ export default {
 @keyframes editAnimation {
     from {margin-top: -50px;}
     to {margin-top: 0px;}
+}
+.foodName, .title{
+  color:gray;
 }
 </style>

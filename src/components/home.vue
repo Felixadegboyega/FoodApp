@@ -26,7 +26,7 @@ export default {
   background-image: url(./img/back.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size:100% 110%;
+  background-size:cover;
   background-attachment: fixed;
   background-blend-mode: color-burn;
   background-color: #7b4b2379;

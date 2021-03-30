@@ -14,9 +14,9 @@
                 <li class="nav-item">
                     <router-link class="nav-link text-light" to="/allfood">Menu</router-link>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="btn nav-link text-light" @click="moveTo('here')">Contact</a>
-                </li>
+                </li> -->
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 <router-link v-if="online == ''" class="nav-link p-2 text-light" to="/login">Log In</router-link>
@@ -88,9 +88,9 @@
           </ul>
         </div>
       </div>
-        <hr class="border">
+      <hr class="bg-light">
       <div class="row p-0">
-        <div class="col-12 small text-light mx-auto text-center">copyright &copy; LikzFoods 2020</div>
+        <div class="col-12 small text-light mx-auto text-center">copyright &copy; Licode 2020</div>
       </div>
     </div>
   </div>
@@ -200,7 +200,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-blend-mode: color-burn; */
-  background-color: #f2ebe6f8 !important;
 }
 .navbar{
   height:60px

@@ -1,50 +1,42 @@
 <template>
-  <div class="pt-5">
-    <div>
-    </div>
-    <div class="container-fluid pt-4">
-      <div class="row">
-        <div class="col-12">
-          <button @click="signOut" class="shadow-sm btn text-dark btn-light ml-auto float-right">
-            Sign Out
-            <img src="./img/signOut.png" alt="">
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 mx-auto p-4">
-          <div>
+    <div class="row pt-5">
+      <div class="col-md-5 p-2 p-md-5">
+         <div class="pl-md-5">
             <img src="./img/profile.png" alt=""> <br>
             {{firstName}}  {{middleName}} <br>
-          {{eMail}} <br>
+            {{eMail}} <br> <br>
+            <button @click="signOut" class="shadow-sm btn text-dark btn-light ">
+              Sign Out
+              <img src="./img/signOut.png" alt="">
+            </button>
           </div>
-          <button class="btn btn-sm btn-info mt-4" data-toggle="collapse" data-target=".transactionDiv">My transaction</button>
-        </div>  
+      </div>
+      <div class="col-md-7 p-2 p-md-5">
+        <button class="btn transaction btn-sm btn-info mt-4" data-toggle="collapse" data-target=".transactionDiv">My transaction</button>
+        <div class="collapse mt-3 transactionDiv mx-auto ">
+          <table class="table text-center table-striped table-responsive">
+            <thead>
+              <tr>
+                <th class="border-0">S/N</th>
+                <th class="border-0">Food Name</th>
+                <th class="border-0">No of Plate</th>
+                <th class="border-0">Price Per Plate</th>
+                <th class="border-0">Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-bind:key="i" v-for="(tra, i) in transaction">
+                <td class="border-0">{{i+=1}}</td>
+                <td class="border-0">{{tra.foodName}}</td>
+                <td class="border-0">{{tra.noOfPlate}}</td>
+                <td class="border-0">{{tra.priceP}}</td>
+                <td class="border-0">{{tra.TotalA}}</td>
+              </tr> 
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-    <div class="collapse transactionDiv mx-auto ">
-      <table class="table mx-auto text-center table-responsive border table-striped">
-        <thead>
-          <tr>
-            <th>S/N</th>
-            <th>Food Name</th>
-            <th>No of Plate</th>
-            <th>Price Per Plate</th>
-            <th>Total Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-bind:key="i" v-for="(tra, i) in transaction">
-            <td>{{i+=1}}</td>
-            <td>{{tra.foodName}}</td>
-            <td>{{tra.noOfPlate}}</td>
-            <td>{{tra.priceP}}</td>
-            <td>{{tra.TotalA}}</td>
-          </tr> 
-        </tbody>
-      </table>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -94,5 +86,13 @@ export default {
 <style scoped>
 .table{
   max-width:fit-content !important
+}
+th{
+  color:gray
+}
+.transaction{
+  background-color: #A07654;
+  border: none;
+  box-shadow: none !important;
 }
 </style>

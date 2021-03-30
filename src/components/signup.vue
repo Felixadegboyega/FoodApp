@@ -102,6 +102,6 @@ export default {
 
 <style scoped>
 .signup{
-  max-width: 320px;
+  max-width: 400px;
 }
 </style>

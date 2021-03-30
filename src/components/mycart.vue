@@ -1,7 +1,7 @@
 <template>
   <div class="pt-3">
   <div class="thcartBox mx-auto bg-light pt-5">
-    <h5 class="ml-5 d-inline-block ">My Cart</h5>
+    <h5 class="ml-5 d-inline-block title">My Cart</h5>
     <router-link v-if="cart != ''" to="/checkOut" class="float-right d-inline-block btn btn-sm btn-outline-secondary ml-auto mr-4">Checkout</router-link><br>
     <div v-if="cart == ''" class="text-center text-muted p-5" style="font-size:2rem !important">
       Cart is Empty
@@ -147,5 +147,8 @@ export default {
 }
 .thcartBox{
   min-height: calc(100vh - 60px);
+}
+.title{
+  color: gray;
 }
 </style>
